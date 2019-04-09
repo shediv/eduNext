@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const PAGE_ACCESS_TOKEN = 'EAAEwk3y2oQMBAKtI3FTZBKkZBcplVyAEOVu1wJ1inKrbJsg4ZAGhbXl587jaWlImU8N74KimX2ouCed7uZBtquO7IdDkb2FhTDgHXDAeZAoJJjF7URS2oGOXNKnd00J6OZCJyGGFPM1p8zX5NDqJIjPLxPPg2Sv9BodZBK0qUbfRabK1jZBXW3Aw';
 
 var app = express();
 
@@ -35,11 +36,14 @@ app.post('/webhook', (req, res) => {
     // Iterate over each entry - there may be multiple if batched
     body.entry.forEach(function(entry) {
 
-      // Get the webhook event. entry.messaging is an array, but 
-      // will only ever contain one event, so we get index 0
+      // Gets the body of the webhook event
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
-      
+    
+      // Get the sender PSID
+      let sender_psid = webhook_event.sender.id;
+      console.log('Sender PSID: ' + sender_psid);
+    
     });
 
     // Return a '200 OK' response to all events
@@ -80,6 +84,21 @@ app.get('/webhook', (req, res) => {
     }
   }
 })
+
+// Handles messages events
+function handleMessage(sender_psid, received_message) {
+
+}
+
+// Handles messaging_postbacks events
+function handlePostback(sender_psid, received_postback) {
+
+}
+
+// Sends response messages via the Send API
+function callSendAPI(sender_psid, response) {
+  
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

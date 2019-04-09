@@ -7,7 +7,7 @@ const request = require('request');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const PAGE_ACCESS_TOKEN = 'EAAEwk3y2oQMBAKtI3FTZBKkZBcplVyAEOVu1wJ1inKrbJsg4ZAGhbXl587jaWlImU8N74KimX2ouCed7uZBtquO7IdDkb2FhTDgHXDAeZAoJJjF7URS2oGOXNKnd00J6OZCJyGGFPM1p8zX5NDqJIjPLxPPg2Sv9BodZBK0qUbfRabK1jZBXW3Aw';
+const PAGE_ACCESS_TOKEN = 'EAAEwk3y2oQMBANWVJlPIRQ9krYakLql7uBTxxTbDxPYz71VLjKn3lPOW8RzzOnRU4aTAuSFPHIlY3irucCeIpdxLypioSrgtuVzyScwOA36HkrAYRrvHgY4D5CbpZCtdc6PgICjZAi1JJeml870yG6ptgGdbKZAZBbgsu5bN1ZBZC7aZBlT5zg5';
 
 var app = express();
 
